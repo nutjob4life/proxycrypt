@@ -54,7 +54,7 @@ ENV PROXY_REDIRECT=default
 # Image construction
 # ------------------
 #
-# Just add OpenSSL, Nginx config, and out custom entrypoint.
+# Just add OpenSSL, Nginx config, and our custom entrypoint.
 
 RUN : &&\
     /sbin/apk update --quiet &&\

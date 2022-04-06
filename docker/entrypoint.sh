@@ -37,7 +37,7 @@
 
 # "Reasonable" defaults:
 CERT_CN=${CERT_CN:-localhost}
-CERT_DAYS=${CER_DAYS:-365}
+CERT_DAYS=${CERT_DAYS:-365}
 
 # Make a random self-signed certificate
 /bin/rm -f /etc/ssl/self.key /etc/ssl/self.cert
