@@ -78,6 +78,7 @@ CMD ["nginx", "-g", "daemon off;"]
 # Metadata
 # --------
 
+EXPOSE 443
 LABEL "org.label-schema.name"="ProxyCrypt"
 LABEL "org.label-schema.description"="SSL/TLS termination for upstream services"
 LABEL "org.label-schema.version"="1.0.0"

@@ -39,6 +39,8 @@
 CERT_CN=${CERT_CN:-localhost}
 CERT_DAYS=${CERT_DAYS:-365}
 
+echo "💁‍♀️ The CERT_CN is ${CERT_CN}" 1>&2
+
 # Make a random self-signed certificate
 /bin/rm -f /etc/ssl/self.key /etc/ssl/self.cert
 /usr/bin/openssl req -nodes -x509 -days ${CERT_DAYS} -newkey rsa:2048 \
