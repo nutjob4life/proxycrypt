@@ -22,12 +22,12 @@ To build the ProxyCrypt image, run:
 
 To run it, put it in your Docker Composition/Swarm/etc., and set these environment variables as needed:
 
-| Variable         | Use                                                                | Default           |
-|:-----------------|:-------------------------------------------------------------------|:------------------|
-| `PROXY_URL`      | Upstream service in the composition/swarm/etc.                     | (unset, required) |
-| `CERT_CN`        | Common name for the random certificate, such as `www.myservice.io` | `localhost`       |
-| `CERT_DAYS`      | How many days before the random certificate expires                | `365`             |
-| `PROXY_REDIRECT` | How to rewrite Location and Refresh headers if necessary           | `default`²        |
+| Variable         | Use                                                                | Default            |
+|:-----------------|:-------------------------------------------------------------------|:-------------------|
+| `PROXY_URL`      | Upstream service in the composition/swarm/etc.                     | (unset, required)  |
+| `CERT_CN`        | Common name for the random certificate, such as `www.myservice.io` | `localhost`        |
+| `CERT_DAYS`      | How many days before the random certificate expires                | `365`              |
+| `PROXY_REDIRECT` | How to rewrite Location and Refresh headers if necessary           | (unset, required)² |
 
 You can also run it locally for testing purposes. Suppose you've got a non-SSL service on TCP port, say, 9200 on your rig. You can run:
 
@@ -62,4 +62,4 @@ The project is licensed under the [Apache version 2](LICENSE.md) license.
 
 ¹Just wait: they're going to demand TLS on Unix Domain Sockets next! 😝
 
-²See the [Nginx documentation on `proxy_redirect`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect) for more information.
+²See the [Nginx documentation on `proxy_redirect`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect) for more information. Unsure where to start? Try using the word `default`.
