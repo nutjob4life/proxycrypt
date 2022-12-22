@@ -22,20 +22,21 @@ To build the ProxyCrypt image, run:
 
 To run it, put it in your Docker Composition/Swarm/etc., and set these environment variables as needed:
 
-| Variable         | Use                                                                | Default            |
-|:-----------------|:-------------------------------------------------------------------|:-------------------|
-| `PROXY_URL`      | Upstream service in the composition/swarm/etc.                     | (unset, required)  |
-| `CERT_CN`        | Common name for the random certificate, such as `www.myservice.io` | `localhost`        |
-| `CERT_DAYS`      | How many days before the random certificate expires                | `365`              |
-| `PROXY_REDIRECT` | How to rewrite Location and Refresh headers if necessary           | (unset, required)² |
+| Variable         | Use                                                                   | Default            |
+|:-----------------|:----------------------------------------------------------------------|:-------------------|
+| `PROXY_URL`      | Upstream service in the composition/swarm/etc.                        | (unset, required)  |
+| `PROXY_PATH`     | URL path from which the service should be called, e.g. /exposed_path/ | (unset, required)  |
+| `CERT_CN`        | Common name for the random certificate, such as `www.myservice.io`    | `localhost`        |
+| `CERT_DAYS`      | How many days before the random certificate expires                   | `365`              |
+| `PROXY_REDIRECT` | How to rewrite Location and Refresh headers if necessary              | (unset, required)² |
 
 You can also run it locally for testing purposes. Suppose you've got a non-SSL service on TCP port, say, 9200 on your rig. You can run:
 
-    docker container run --env PROXY_URL=http://host.docker.internal:9200/ --publish 8888:443 --rm nasapds/proxycrypt --detach
+    docker container run --env PROXY_URL=http://host.docker.internal:9200/ ---env PROXY_PATH=/exposed_path/ --publish 8888:443 --rm nasapds/proxycrypt --detach
 
 and get an `https` version of that service on port 8888:
 
-    curl --insecure https://localhost:8888/
+    curl --insecure https://localhost:8888/exposed_path
 
 You'll need the `--insecure` (or its equivalent in other applications) since it's a self-signed key.
 

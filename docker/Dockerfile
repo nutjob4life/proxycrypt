@@ -46,6 +46,7 @@ FROM nginx:1.21.6-alpine
 #
 # - CERT_DAYS: How long the random certificate is good for; defaults to 365
 # - PROXY_URL: Where to send upstream requests; this is **required**
+# - PROXY_PATH: Path exposed on the proxy, from which to call the service; this is **required** 
 
 ENV CERT_CN=localhost
 ENV PROXY_REDIRECT=default
