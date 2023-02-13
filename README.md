@@ -26,6 +26,7 @@ To run it, put it in your Docker Composition/Swarm/etc., and set these environme
 |:-----------------|:----------------------------------------------------------------------|:-------------------|
 | `PROXY_URL`      | Upstream service in the composition/swarm/etc.                        | (unset, required)  |
 | `PROXY_PATH`     | URL path from which the service should be called, e.g. /exposed_path/ | (unset, required)  |
+| `PROXY_PORT`     | port used by the proxy, as seen by the user                           | (unset, required)  |
 | `CERT_CN`        | Common name for the random certificate, such as `www.myservice.io`    | `localhost`        |
 | `CERT_DAYS`      | How many days before the random certificate expires                   | `365`              |
 | `PROXY_REDIRECT` | How to rewrite Location and Refresh headers if necessary              | (unset, required)² |
