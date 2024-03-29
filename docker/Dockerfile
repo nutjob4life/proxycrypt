@@ -17,6 +17,7 @@ FROM nginx:1.21.6-alpine
 # - CERT_DAYS: How long the random certificate is good for; defaults to 365
 # - PROXY_URL: Where to send upstream requests; this is **required**
 # - PROXY_PATH: Path exposed on the proxy, from which to call the service; this is **required** 
+# - WHITELIST: Optional comma-separated list of IPs
 
 ENV CERT_CN=localhost
 ENV PROXY_REDIRECT=default
@@ -53,4 +54,4 @@ CMD ["nginx", "-g", "daemon off;"]
 EXPOSE 443
 LABEL "org.label-schema.name"="ProxyCrypt"
 LABEL "org.label-schema.description"="SSL/TLS termination for upstream services"
-LABEL "org.label-schema.version"="1.0.0"
+LABEL "org.label-schema.version"="0.0.0"
