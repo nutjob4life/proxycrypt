@@ -1,7 +1,6 @@
-My Project (update licensing below per specific organization)
+Proxycrypt
 
-Copyright 2021, California Institute of Technology ("Caltech").
-U.S. Government sponsorship acknowledged.
+Copyright 2024, Sean Kelly.
 
 All rights reserved.
 
