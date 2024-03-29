@@ -57,4 +57,5 @@ The project is licensed under the [Apache version 2](LICENSE.md) license.
 ## 👣 Footnotes
 
 ¹See the [Nginx documentation on `proxy_redirect`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect) for more information. Unsure where to start? Try using the word `default`.
+
 ²See the [Nginx documentation on `allow` and `deny`](https://nginx.org/en/docs/http/ngx_http_access_module.html) for syntax.
