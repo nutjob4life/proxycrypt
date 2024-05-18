@@ -6,6 +6,8 @@
 # Check essential env vars:
 : ${WHITELIST:?✋ The environment variable WHITELIST is required}
 
+rm -f /etc/nginx/whitelist.conf && touch /etc/nginx/whitelist.conf
+
 OLD_IFS="$IFS"
 IFS=','
 set -- $WHITELIST
