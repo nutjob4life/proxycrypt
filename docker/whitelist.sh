@@ -6,8 +6,10 @@
 # Check essential env vars:
 : ${WHITELIST:?✋ The environment variable WHITELIST is required}
 
-rm -f /etc/nginx/whitelist.conf && touch /etc/nginx/whitelist.conf
+# Start with an empty whitelist
+cp /dev/null /etc/nginx/whitelist.conf
 
+# Make parsing command-line go by commas
 OLD_IFS="$IFS"
 IFS=','
 set -- $WHITELIST
