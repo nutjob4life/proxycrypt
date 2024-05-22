@@ -13,7 +13,7 @@ cp /dev/null /etc/nginx/whitelist.conf
 OLD_IFS="$IFS"
 IFS=','
 set -- $WHITELIST
-IFS="$OLD_FIS"
+IFS="$OLD_IFS"
 for ip; do
     echo "allow $ip;" >> /etc/nginx/whitelist.conf
 done
